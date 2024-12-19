@@ -1,0 +1,18 @@
+/*
+Theme Name: Garden
+Version: 1.0
+Description: Fancy green theme
+Tags: green, garden
+Author: S
+
+*/
+
+body {
+    background-color: grey;
+}
+
+header .nav-item a {
+    color: white;
+    text-decoration: none;
+}
+
