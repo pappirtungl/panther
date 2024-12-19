@@ -17,22 +17,24 @@
     }
 
     add_action('init', 'garden_menus');
+var_dump(get_template_directory_uri() . '/dist/app' . (WP_DEBUG ? '' : '.min') . '.css');
 
     function garden_register_styles() {
        $version = wp_get_theme()->get('version');
-        wp_enqueue_style('garden-style', get_template_directory_uri() . "/style.css", array('garden-bootstrap'), $version, 'all');
-        wp_enqueue_style('garden-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", array(), '5.3.3', 'all');
+       wp_enqueue_style('theme-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", array(), '5.3.3', 'all');
+       wp_enqueue_style('theme-style', get_template_directory_uri() . '/dist/app' . (WP_DEBUG ? '' : '.min') .'.css', false, $version, 'all');
+       
     }
 
     add_action('wp_enqueue_scripts', 'garden_register_styles');
 
     function garden_register_scripts() {
-        wp_enqueue_script('garden-jquery', "https://code.jquery.com/jquery-3.7.1.slim.min.js", array(), '3.7.1', true);
-        wp_enqueue_script('garden-popper', "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", array(), '2.9.2', true);
-        wp_enqueue_script('garden-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js", array(), '5.3.3', true);
+        wp_enqueue_script('theme-jquery', "https://code.jquery.com/jquery-3.7.1.slim.min.js", array(), '3.7.1', true);
+        wp_enqueue_script('theme-popper', "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", array(), '2.9.2', true);
+        wp_enqueue_script('theme-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js", array(), '5.3.3', true);
       
-        wp_enqueue_script('garden-fontawesome', "https://kit.fontawesome.com/3e1b7e2b95.js", array(), '5', true);
-        wp_enqueue_script('garden-js', get_template_directory_uri() . "/assets/js/main.js", array(), '1.0', true);
+        wp_enqueue_script('theme-fontawesome', "https://kit.fontawesome.com/3e1b7e2b95.js", array(), '5', true);
+        wp_enqueue_script('theme-js', get_template_directory_uri() . "/assets/js/main.js", array(), '1.0', true);
      }
  
      add_action('wp_enqueue_scripts', 'garden_register_scripts');

@@ -37,7 +37,7 @@ wp_head();
 						$logo = wp_get_attachment_image_src($custom_logo_id);
 					}
 				?>
-				<a href="<?php echo home_url(); ?>"><img class="mb-3 logo" src="<?php echo $logo[0] ?>" alt="logo" ></a>			
+				<!-- <a href="<?php echo home_url(); ?>"><img class="mb-3 logo" src="<?php echo $logo[0] ?>" alt="logo" ></a>			 -->
 				
 				<?php
 					wp_nav_menu(
