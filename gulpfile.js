@@ -21,7 +21,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
       return gulp.src('assets/js/*.js')
         .pipe(order(['jquery.js', '*.js']))
-        .pipe(concat('main.js'))
+        .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist'))

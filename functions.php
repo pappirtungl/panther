@@ -17,7 +17,6 @@
     }
 
     add_action('init', 'garden_menus');
-var_dump(get_template_directory_uri() . '/dist/app' . (WP_DEBUG ? '' : '.min') . '.css');
 
     function garden_register_styles() {
        $version = wp_get_theme()->get('version');
