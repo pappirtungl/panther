@@ -26,10 +26,10 @@ wp_head();
   
   
 			<div id="navigation" class=" container collapse navbar-collapse flex-row p-0" >
-				 <?php//
-				//if(function_exists('the_custom_logo')) {
-				//	the_custom_logo();
-				//}
+				 <?php 
+				if(function_exists('the_custom_logo')) {
+					the_custom_logo();
+				}
 				?>
 				<?php
 					if(function_exists('the_custom_logo')) {
